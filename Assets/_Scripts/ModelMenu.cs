@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class ModelMenu : MonoBehaviour {
 
+    public bool isActive;
     public Renderer[] childRenders;
 
     // Use this for initialization
     void Start()
     {
+        isActive = false;
+        gameObject.SetActive(isActive);
         childRenders = GetComponentsInChildren<Renderer>();
-
     }
 
     public void fadePanelOut()
     {
         StartCoroutine(FadeTo(0.0f, 1.0f));
+        setActiveState();
+        Debug.Log("ModelMenu is " + isActive);
     }
 
     public void fadePanelIn()
     {
+        setActiveState();
         StartCoroutine(FadeTo(0.647f, 1.0f));
+        Debug.Log("ModelMenu is " + isActive);
     }
 
     IEnumerator FadeTo(float aValue, float aTime)
@@ -39,5 +45,12 @@ public class ModelMenu : MonoBehaviour {
             childRenders[2].material.color = newColor2;
             yield return null;
         }
+    }
+
+    public void setActiveState()
+    {
+        isActive = !isActive;
+        gameObject.SetActive(isActive);
+        Debug.Log("MainUIPanel is " + isActive);
     }
 }

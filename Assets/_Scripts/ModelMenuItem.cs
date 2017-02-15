@@ -131,9 +131,9 @@ public class ModelMenuItem : MonoBehaviour {
             m_Audio.Play();
 
             PlayPauseRotation();
-            if (!m_ModelControllers.isActive) {
-                m_ModelControllers.fadePanelIn();
-            }
+            // if (!m_ModelControllers.isActive) {
+            //    m_ModelControllers.fadePanelIn();
+            // }
         }
         else if (m_PlayVideo) {
             // Play the clip appropriate for when the user starts looking at the bar.

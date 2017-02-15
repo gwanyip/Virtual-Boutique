@@ -24,7 +24,7 @@ public class Boutique : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.timeSinceLevelLoad > 5f && Time.timeSinceLevelLoad < 5.5f ) {
+        if (Time.timeSinceLevelLoad > 5f && Time.timeSinceLevelLoad < 5.5f) {
             building.fadeInFloorCeiling();
             m_Audio.Play();
         }
@@ -32,7 +32,7 @@ public class Boutique : MonoBehaviour {
         {
             addWindows();
         }
-        if (Time.timeSinceLevelLoad > 14f && Time.timeSinceLevelLoad < 14.5f) {
+        if (Time.timeSinceLevelLoad > 14f && Time.timeSinceLevelLoad < 14f + Time.deltaTime) {
             mainUIPanel.fadeInPanels();
         }
     }
