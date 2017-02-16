@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRStandardAssets.Utils;
 
 public class Boutique : MonoBehaviour {
 
@@ -11,15 +12,15 @@ public class Boutique : MonoBehaviour {
     public GameObject window2;
     public GameObject window3;
 
-    [SerializeField]
-    private AudioSource m_Audio;                                  // Reference to the audio source that will play effects when the user looks at it and when it fills.
-    [SerializeField]
-    private AudioClip m_EntranceClip;                             // The clip to play when the boutique materializes
+    [SerializeField] private AudioSource m_Audio;                                  // Reference to the audio source that will play effects when the user looks at it and when it fills.
+    [SerializeField] private AudioClip m_EntranceClip;                             // The clip to play when the boutique materializes
+    [SerializeField] private SelectionRadial m_SelectionRadial;                    // Selection Radial
 
     // Use this for initialization
     void Start () {
         removeWindows();
         m_Audio.clip = m_EntranceClip;
+        m_SelectionRadial.Hide();
     }
 	
 	// Update is called once per frame
@@ -33,6 +34,7 @@ public class Boutique : MonoBehaviour {
             addWindows();
         }
         if (Time.timeSinceLevelLoad > 14f && Time.timeSinceLevelLoad < 14f + Time.deltaTime) {
+            m_SelectionRadial.Hide();
             mainUIPanel.fadeInPanels();
         }
     }

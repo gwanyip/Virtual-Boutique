@@ -753,6 +753,11 @@ Prefab:
       propertyPath: m_Button2
       value: 
       objectReference: {fileID: 1931481372}
+    - target: {fileID: 114765991569605716, guid: bba6f8e5e4d318c469b6d93a5d682689,
+        type: 2}
+      propertyPath: m_SelectionRadial
+      value: 
+      objectReference: {fileID: 1797024595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bba6f8e5e4d318c469b6d93a5d682689, type: 2}
   m_IsPrefabParent: 0
@@ -767,18 +772,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1818539094537920, guid: 5c655fcdf432e08468d26601b2ec2bf0,
     type: 2}
   m_PrefabInternal: {fileID: 899045417}
---- !u!114 &1797024587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1797024586}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec37bb2ac9c199a44813284e110b0209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrMedia: {fileID: 0}
 --- !u!114 &1797024588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +796,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 899045417}
   m_Script: {fileID: 11500000, guid: 8902ef04f323e444b98d2e4fd80a56ab, type: 3}
+--- !u!114 &1797024595 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114328658213363642, guid: 5c655fcdf432e08468d26601b2ec2bf0,
+    type: 2}
+  m_PrefabInternal: {fileID: 899045417}
+  m_Script: {fileID: 11500000, guid: 03fb8390bc96a7f4cafebf5efc362f62, type: 3}
 --- !u!1 &1931481372 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1680020940203404, guid: 06985e33f729a1e45941bf57e1e421f9,

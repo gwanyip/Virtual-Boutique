@@ -73,6 +73,7 @@ public class UICTA : MonoBehaviour {
         // Play the clip for when the bar is filled.
         m_Audio.clip = m_OnFilledClip;
         m_Audio.Play();
+        print("Click audio played");
         mainUIPanel.fadeOutPanels();
         modelContainer.setModel(0);
         modelMenuItem.setSceneToLoad(0);

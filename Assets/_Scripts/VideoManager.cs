@@ -6,9 +6,10 @@ using VRStandardAssets.Utils;
 public class VideoManager : MonoBehaviour {
 
     [SerializeField] private float m_IntroOutroFadeDuration = 2f;                     // The duration of the fade before and after the intro
-    [SerializeField] private UIControllerVB m_UIController;                             // This needs to know when specific pieces of UI should be shown.
-    [SerializeField] private VRCameraFade m_CameraFade;                                 // This is used to fade out and back in again as the game starts.
-    [SerializeField] private MediaPlayerCtrl m_360VideoCtrl;                            // This is used to fade out and back in again as the game starts.
+    [SerializeField] private UIControllerVB m_UIController;                           // This needs to know when specific pieces of UI should be shown.
+    [SerializeField] private VRCameraFade m_CameraFade;                               // This is used to fade out and back in again as the game starts.
+    [SerializeField] private MediaPlayerCtrl m_360VideoCtrl;                          // This is used to fade out and back in again as the game starts.
+    [SerializeField] private SelectionRadial m_SelectionRadial;                       // Selection Radial
 
     public GameObject m_Button1;
     public GameObject m_Button2;
@@ -18,7 +19,7 @@ public class VideoManager : MonoBehaviour {
 
         m_360VideoCtrl.OnReady += OnReady;
         m_360VideoCtrl.OnEnd += OnEnd;
-
+         
     }
 	
 	// Update is called once per frame
@@ -31,12 +32,14 @@ public class VideoManager : MonoBehaviour {
         Debug.Log("Video has started");
         m_Button1.SetActive(false);
         m_Button2.SetActive(false);
+        m_SelectionRadial.Hide();
     }
 
     void OnEnd() {
         Debug.Log("Video has finished");
         m_Button1.SetActive(true);
         m_Button2.SetActive(true);
+        m_SelectionRadial.Show();
         StartCoroutine(StartPhase());
     }
 
